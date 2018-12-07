@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="april_tags_ueye" type="april_tags_ueye" 
+    name="april_tags_ueye" output="screen">
+    <param name="PUBLISH_IMAGE" type="bool" value="false"/>
+    <param name="camera_exposure" type="double" value="0"/>
+    <param name="use_original_detection_algorithm" type="bool" value="false"/>
+    <param name="tag_size" type="double" value="0.343"/>
+    <param name="tag_id" type="int" value="5"/>
+    <param name="image_scaling" type="double" value="1.0"/>
+  </node>
+</launch>

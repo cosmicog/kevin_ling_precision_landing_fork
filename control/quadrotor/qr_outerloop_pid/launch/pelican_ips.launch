@@ -1,0 +1,27 @@
+<launch>
+
+  ### Controller parameters #######################
+  <rosparam file="$(find qr_outerloop_pid)/launch/pelican_parameters.yaml"/>
+
+  ### Optitrack #################################################
+  <include file="$(find mocap_optitrack)/launch/mocap.launch"/>
+
+  ### Asctec mav framework #####################################
+  <include file="$(find asctec_hl_interface)/launch/fcu.launch"/>
+
+  ### Waypoint Driver #########################################
+  <include file="$(find qr_waypoint_driver)/launch/test_trajectory.launch"/>
+
+  #### WAVE Estimators ###############################
+  <node pkg="qr_ips_estimator"
+      type="pelican_ips_estimator_node"
+      name="pelican_ips_estimator"
+      output="screen">
+  </node>
+
+  #### WAVE Control ###############################
+  <node pkg="qr_outerloop_pid" type="pelican_outerloop_pid" name="pelican_pid_control"
+      output="screen">
+  </node>
+</launch>
+

@@ -1,0 +1,26 @@
+height/Kp: 2.5
+height/Ki: 0.1
+height/Kd: 2.25
+height/trim: 0.88
+
+yaw/Kp: 1.35
+yaw/Ki: 0.5
+yaw/Kd: 0.35
+
+enable_pid_logging: true
+
+# Parameters for both x and y translation controllers
+translation/integrator_limit: 2.0
+translation/max_angle: 0.523598776
+
+# translation_x and translation_y parameters should be matched
+translation_x/Kp: 4.5
+translation_x/Ki: 0.3
+translation_x/Kd: 2.9
+
+translation_y/Kp: 4.5
+translation_y/Ki: 0.3
+translation_y/Kd: 2.9
+
+wave/max_control_rate: 50.0
+wave/max_estimate_rate: 50.0

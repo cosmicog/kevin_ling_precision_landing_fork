@@ -1,0 +1,28 @@
+enable_pid_logging: true
+
+height/Kp: 2.5
+height/Ki: 0.1
+height/Kd: 2.2
+height/trim: 0.95
+
+yaw/Kp: 1.35
+yaw/Ki: 0.5
+yaw/Kd: 0.35
+
+translation_x/Kp: 1.75
+translation_x/Ki: 0.3
+translation_x/Kd: 2.0
+
+translation_y/Kp: 1.75
+translation_y/Ki: 0.3
+translation_y/Kd: 2.0
+
+wave/max_control_rate: 50.0
+wave/max_estimate_rate: 50.0
+
+wave/imu_delay_frames: 6
+
+ros_april/tag_size: 0.154
+ros_april/PUBLISH_IMAGE: false
+
+ros_april/camera_exposure: 10.960

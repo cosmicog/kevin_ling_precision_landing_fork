@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <name>april_tags_ueye</name>
+  <version>0.0.0</version>
+  <description>April Tag node tightly coupled with a uEye camera driver.</description>
+
+  <maintainer email="kling@uwaterloo.ca">kling</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>wave_utils</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>wave_utils</run_depend>
+
+
+  <export>
+  </export>
+</package>

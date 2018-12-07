@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>wave_estimation</name>
+  <version>0.0.0</version>
+  <description>Library for Kalman filter implementations.</description>
+
+  <maintainer email="kling@uwaterloo.ca">Kevin Ling</maintainer>
+
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+
+  <export>
+  </export>
+</package>

@@ -1,0 +1,67 @@
+QR Outerloop PID Package
+
+This package contains nodes for quadrotor control. All of the nodes implement
+the outerloop of the common cascade control architecture on quadrotors. That is,
+the outerloop controller takes in the desired position (x, y, z) and yaw
+commands and outputs roll, pitch, yaw_rate, and collective thrust commands.
+
+For translational control (x and y positions), PID controllers map the position
+error to desired accelerations. A nonlinear inversion is used to relate the
+desired accelerations and current thrust command to commanded roll and pitch
+angles.
+
+For thrust control, a PID controller maps the z-position error to the desired
+thrust. The thrust is also boosted to compensate for roll and pitch.
+
+Several command types are accepted. See the wave_msgs::QRControl message for
+details.
+
+All nodes must conform to this top-level package description.
+
+Node(s):
+  -pelican_outerloop_pid
+
+All nodes subscribe to:
+  - wave/qr_control_command [wave_msgs::QRControl]: specifies the quadrotor
+      command
+  - wave/qr_state_estimate [wave_msgs::QRStateEstimate]: message that specifies
+      the current quadrotor states.
+
+Launch file parameters:
+  - xy_P [double] - Sets the translational position control proportional
+      gain. Default: 3.3 [(m/s^2) / m]
+
+  - xy_I [double] - Sets the translational position control integral
+      gain. Default: 0.3
+
+  - xy_D [double] - Sets the translational position control derivative
+      gain. Default: 1.9
+
+  - alt_P [double] - Sets the height control proportional gain.
+      Default:  [N/m]
+
+  - alt_I [double] - Sets the height control integral gain. Default: 
+
+  - alt_D [double] - Sets the height control derivative gain. Default: 
+
+  - yaw_P [double] - Sets the yaw control proportional gain. Default: 0.8
+
+  - yaw_I [double] - Sets the yaw control integral gain. Default: 0.0
+
+  - yaw_D [double] - Sets the yaw control derivative gain. Default: 0.3
+
+  - max_rp_angle [double] - Sets the maximum roll/pitch command, in degrees.
+      Default: 30.0
+
+
+============================================================
+pelican_outerloop_pid node
+============================================================
+Outputs of the controller are published to the asctec_mav_framework, which
+relays the commands to the LLP of an asctec quadrotor.
+
+Note: All four control loops (x, y, yaw, and thrust) are always running in this
+  node. Manual control for individual control loops can be set in the
+  asctec_mav_framework's asctec_hl_interface node.
+
+

@@ -1,0 +1,18 @@
+<package>
+  <name> wave_msgs </name>
+  <version>0.0.0 </version>
+  <description> wave qr messages</description>
+  <license>BSD</license>
+  <maintainer email="wavelab@wavelab.com"> wavelab </maintainer>
+  <buildtool_depend> catkin </buildtool_depend>
+  <build_depend> message_runtime </build_depend>
+  <build_depend> std_msgs </build_depend>
+  <run_depend> message_runtime </run_depend>
+  <run_depend> std_msgs </run_depend>
+
+<export>
+</export>
+ 
+</package>
+
+

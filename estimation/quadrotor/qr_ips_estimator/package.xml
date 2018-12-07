@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>qr_ips_estimator</name>
+  <version>0.0.0</version>
+  <description>The qr_ips package differentiates measurements from the indoor positioning system and combines it with onboard measurements to generate QRStateEstimate messages.</description>
+
+  <maintainer email="kling@uwaterloo.ca">kling</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>wave_utils</build_depend>
+  <build_depend>wave_msgs</build_depend>
+  <build_depend>wave_pelican</build_depend>
+  <build_depend>asctec_hl_comm</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>wave_utils</run_depend>
+  <run_depend>wave_msgs</run_depend>
+  <run_depend>wave_pelican</run_depend>
+  <run_depend>asctec_hl_comm</run_depend>
+
+  <export>
+  </export>
+</package>

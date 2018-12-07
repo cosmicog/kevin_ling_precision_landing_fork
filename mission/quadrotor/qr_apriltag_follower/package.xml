@@ -1,0 +1,24 @@
+<package>
+  <name>qr_apriltag_follower</name>
+  <version>0.1.0</version>
+  <description>Mission level control node that coordinates the quadrotor estimator and controller to acquire, follow, and land on an AprilTagged target.</description>
+  <author>Michael Tribou</author>
+  <maintainer email="mjtribou@uwaterloo.ca">Michael Tribou</maintainer>
+  <license>BSD</license>
+  <buildtool_depend> catkin </buildtool_depend> 
+  <build_depend> roscpp </build_depend>
+  <build_depend> asctec_hl_comm </build_depend>
+  <build_depend> qr_outerloop_pid </build_depend>
+  <build_depend> wave_msgs </build_depend>
+  <build_depend> wave_utils </build_depend>
+  <build_depend> wave_pelican </build_depend>
+  <run_depend> roscpp </run_depend>
+  <run_depend> asctec_hl_comm </run_depend>
+  <run_depend> qr_outerloop_pid </run_depend>
+  <run_depend> wave_msgs </run_depend>
+  <run_depend> wave_utils </run_depend>
+  <run_depend> wave_pelican </run_depend>
+
+</package>
+
+

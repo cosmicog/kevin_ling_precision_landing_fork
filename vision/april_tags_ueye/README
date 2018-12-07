@@ -1,0 +1,11 @@
+April Tag Detection Node with Built in UEyeCamera thread.
+--------------------------------------------------------
+- This node has both april tag detection and the camera driver in one, to cut
+  down on any copy overhead and transport delays.
+
+- The Kaess April Tag library does all the heavy lifting. It has been modified
+  to run faster (but is no longer robust against occlusions).
+
+- By default only detected tag messages are published. The actual images can be
+  published by enabling it through a ROS parameter.
+  

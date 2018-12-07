@@ -1,0 +1,45 @@
+<launch>
+
+  ### Controller parameters #######################
+  <rosparam file="$(find qr_apriltag_follower)/launch/apriltag_follower_pelican_parameters.yaml"/>
+
+  ### Asctec mav framework #####################################
+  <include file="$(find asctec_hl_interface)/launch/fcu.launch"/>
+
+  ### Px4flow ################################################
+  <include file="$(find px4flow)/launch/px4flow.launch"/>
+
+  ### Mission Controller: Apriltag Follower ########################
+  <node pkg="qr_apriltag_follower"
+      type="qr_apriltag_follower"
+      name="apriltag_follower"
+      output="screen"/>
+
+  ### Apriltag #######################
+  <node pkg="april_tags_ueye"
+      type="april_tags_ueye"
+      name="ros_april"
+      output="log">
+    <param name="PUBLISH_IMAGE" type="bool" value="false"/>
+    <param name="camera_exposure" type="double" value="0.160450"/>
+    <param name="use_original_detection_algorithm" type="bool" value="false"/>
+    <param name="tag_size" type="double" value="0.343"/>
+    <param name="tag_id" type="int" value="5"/>
+    <param name="image_scaling" type="double" value="1.0"/>
+    <param name="publish_failed_detections" type="bool" value="true"/>
+	</node>
+
+  #### WAVE Estimators ###############################
+  <node pkg="qr_relative_target_estimator"
+      type="qr_relative_target_estimator"
+      name="relative_target_estimator"
+      output="log">
+  </node>
+
+  #### WAVE Control ###############################
+  <node pkg="qr_outerloop_pid" type="pelican_outerloop_pid" name="pelican_pid_control"
+      output="screen">
+    <remap from="wave/qr_inertial_estimate" to="wave/qr_relative_estimate"/>
+  </node>
+</launch>
+

@@ -1,0 +1,22 @@
+<launch>
+
+
+  #### Simulator  ###############################
+  <node pkg="qr_sim_basic"
+      type="qr_sim_basic"
+      name="basic_pelican_simulator"
+      output="screen">
+  </node>
+
+  ### Controller parameters #######################
+  <rosparam file="$(find qr_outerloop_pid)/launch/pelican_parameters.yaml"/>
+
+  ### WAVE Control ################################
+  <node pkg="qr_outerloop_pid" type="pelican_outerloop_pid" name="pelican_pid_control"
+      output="screen">
+
+  </node>
+
+
+</launch>
+
