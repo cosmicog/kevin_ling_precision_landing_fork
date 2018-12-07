@@ -7,7 +7,10 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 
-find_package(Eigen REQUIRED)
+find_package(Eigen 3 QUIET)
+if(NOT Eigen_FOUND)
+  set(Eigen_INCLUDE_DIR "${EIGEN3_INCLUDE_DIR}")
+endif()
 
 include_directories(
   include 
